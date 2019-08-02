@@ -71,7 +71,7 @@ class list extends State<ListViewFragment>{
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppBar(
+   /*   appBar: AppBar(
         backgroundColor: Colors.greenAccent,
         title: appBarTitle,
         actions: <Widget>[
@@ -99,7 +99,7 @@ class list extends State<ListViewFragment>{
             },
           ),
         ],
-      ),
+      ),*/
       body: Container(
         child: ListView.builder(
             padding: EdgeInsets.only(top: 4, left: 6, bottom: 4, right: 6),

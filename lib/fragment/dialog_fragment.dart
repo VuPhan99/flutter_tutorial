@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:flutter_app/newPages.dart';
+import 'package:flutter_app/view/newPages.dart';
 
 class DialogFragment extends StatefulWidget {
   @override

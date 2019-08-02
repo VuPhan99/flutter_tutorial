@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/fragment/contactList_Fragment.dart';
 import 'package:flutter_app/fragment/girdView_fragment.dart';
 import 'package:flutter_app/fragment/listView_fragment.dart';
+import 'package:flutter_app/fragment/scanQRcode_fragment.dart';
+import 'package:flutter_app/fragment/tab_fragment.dart';
 import 'package:flutter_app/fragment/tutorial_fragment.dart';
 import 'package:flutter_app/fragment/tabBar_fragment.dart';
 import 'package:flutter_app/fragment/dialog_fragment.dart';
-import 'package:flutter_app/newPages.dart';
+
+import 'addNewContact.dart';
 
 
 class DrawerItem {
@@ -28,8 +32,12 @@ class MainPagesState extends State<MainPage> {
         return new GirdViewFragment();
       case 3:
         return new TabBarFragment();
+/*      case 4:
+        return new DialogFragment();*/
       case 4:
-        return new DialogFragment();
+        return new ContactList();
+      case 5:
+        return new ScanQRCode();
       default:
         return new Text("Error");
     }
@@ -90,7 +98,7 @@ class MainPagesState extends State<MainPage> {
         child: new Column(
           children: <Widget>[
             new UserAccountsDrawerHeader(
-                accountName: new Text("Tutorial Flutter" , style: TextStyle(fontSize: 18),), accountEmail: null),
+                accountName: new Text("Flutter" , style: TextStyle(fontSize: 30),), accountEmail: null),
             new Column(children: drawerOptions)
           ],
         ),
@@ -100,7 +108,7 @@ class MainPagesState extends State<MainPage> {
       /*body: content,*/
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder:(context) => NewPage  () ));
+          Navigator.push(context, MaterialPageRoute(builder:(context) => AddNewContact  () ));
         },
         child: Icon(Icons.create_new_folder),),
 
@@ -110,11 +118,15 @@ class MainPagesState extends State<MainPage> {
 }
 class MainPage extends StatefulWidget{
   final drawerItems = [
-    new DrawerItem("Tutorial", Icons.home),
+    new DrawerItem("Wellcome", Icons.home),
     new DrawerItem("List View", Icons.view_list),
     new DrawerItem("Gird View", Icons.grid_on),
     new DrawerItem("Tabbed Bar", Icons.tab),
-    new DrawerItem("Dialog", Icons.directions)
+/*
+    new DrawerItem("Dialog", Icons.directions),
+*/
+    new DrawerItem("Contacts", Icons.contacts),
+    new DrawerItem("Scan QR", Icons.scanner)
   ];
 
   @override

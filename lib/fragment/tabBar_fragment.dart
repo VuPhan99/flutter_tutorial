@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/fragment/tab_new_contact.dart';
+import 'package:flutter_app/view/addNewContact.dart';
+
+import 'contactList_Fragment.dart';
 
 class TabBarFragment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return new DefaultTabController(
-      length: 3,
+      length: 2,
       child: Column(
         children: <Widget>[
           Container(
@@ -13,13 +17,10 @@ class TabBarFragment extends StatelessWidget {
             child: TabBar(
               tabs: <Widget>[
                 Tab(
-                  text: "Tab One",
+                  text: "New Contact",
                 ),
                 Tab(
-                  text: "Tab Two",
-                ),
-                Tab(
-                  text: "Tab Three",
+                  text: "List Contact",
                 ),
               ],
             ),
@@ -35,21 +36,8 @@ class TabBarFragment extends StatelessWidget {
   }
   Widget content = TabBarView(
     children: <Widget>[
-      new Container(
-        child: new Center(
-          child: Text("Tab One"),
-        ),
-      ),
-      new Container(
-        child: new Center(
-          child: Text("Tab Two"),
-        ),
-      ), new Container(
-        child: new Center(
-          child: Text("Tab Three"),
-        ),
-      )
-
+      TabNewContact(),
+      ContactList(),
     ],
   );
 
